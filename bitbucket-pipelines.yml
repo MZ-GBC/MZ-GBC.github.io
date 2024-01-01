@@ -4,13 +4,13 @@ pipelines:
   default:
     - step:
         script:
-          - git config --global user.email "snoopy12oyk@gmail.com"
-          - git config --global user.name "eottabom"
+          - git config --global user.email "andy@mz.co.kr"
+          - git config --global user.name "andy"
           - gem install jekyll
           - bundle install
           - rm -rf .git
           - rm -rf _site
-          - git clone https://eottabom:$SITE_PASSWD@bitbucket.org/eottabom/eottabom.bitbucket.io.git _site
+          - git clone https://hwanghakbeom_mz:$SITE_PASSWD@bitbucket.org/megazone-gcp/megazone-gcp.bitbucket.io.git _site
           - bundle exec jekyll build
           - cd _site
           - git add . && git commit -m "New version - $BITBUCKET_COMMIT"
