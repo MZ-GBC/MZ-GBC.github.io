@@ -1,11 +1,23 @@
-  - name: Checkout
-    uses: actions/checkout@v2
-    with:
-      fetch-depth: 0 # <-- clone with complete history
-  - name: Push
-    uses: heussd/mirror-to-bitbucket-github-action@v2
-    with:
-      username: andy
-      spacename: mz-gcp
-      repository: blog
-      password: ${{ secrets.BITBUCKET_PASSWORD }}
+name: Mirror to Bitbucket
+
+on:
+  push:
+    branches:
+      - main  # Change this to the branch you want to mirror
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Push to Bitbucket
+        run: |
+          git remote add https://hwanghakbeom_mz@bitbucket.org/megazone-gcp/megazone-gcp.bitbucket.io.git
+          git push origin master
+        env:
+          BITBUCKET_USERNAME: andy@mz.co.kr
+          BITBUCKET_PASSWORD: ${{ secrets.BITBUCKET_PASSWORD }}
+
