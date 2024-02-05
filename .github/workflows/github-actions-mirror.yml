@@ -16,7 +16,6 @@ jobs:
       - name: Push to Bitbucket
         run: |
           git remote add bitbucket https://hwanghakbeom_mz:${{ secrets.BITBUCKET_PASSWORD }}@bitbucket.org/megazone-gcp/megazone-gcp.bitbucket.io.git
-          git push bitbucket HEAD:master
+          git push bitbucket HEAD:master --force
         env:
           BITBUCKET_USERNAME: andy@mz.co.kr
-

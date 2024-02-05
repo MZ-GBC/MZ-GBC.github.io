@@ -6,8 +6,6 @@ tags: [Cloud Build, Artifact Registry, Cloud Source Repositories]
 banner: /assets/images/2024-01-18-cicd/architecture.png
 ---
 
-CI/CD 파이프라인은 소프트웨어 개발 및 배포 과정을 자동화하기 위한 일련의 프로세스입니다. CI는 Continuous Integration의 약자이고, CD는 Continuous Deployment 또는 Continuous Delivery의 약자로 빠르게 변화하는 소프트웨어 개발 환경에 대응하여 코드 통합, 테스트, 배포 등의 작업을 자동화하고 지속적으로 소프트웨어를 개발하고 배포하는 방식으로 높은 품질의 소프트웨어를 신속하게 제공할 수 있도록 합니다.
-
 이 글에서는 Google Cloud의 Cloud Build와 Argo CD를 통해 GKE 클러스터에 배포 파이프라인을 구축하는 방법에 대해서 알아보겠습니다. 
 
 <img src='/assets/images/2024-01-18-cicd/architecture.png'>
